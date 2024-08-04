@@ -1,0 +1,17 @@
+stages:
+  - apply-netpol
+
+apply_netpol_job:
+  stage: apply-netpol
+  image: python:3.9-alpine
+  script:
+    - echo "$KUBE_CONFIG" > kubeconfig.yaml
+    - export KUBECONFIG=$(pwd)/kubeconfig.yaml
+#   - apk add gcc ssl
+    - apk add --no-cache gcc musl-dev libffi-dev openssl-dev
+    - pip install kubernetes
+    - python netpol.py  
+  when: manual  # Set the job to be triggered manually
+  variables:
+    CURRENT_NS: "current_NS"
+    TARGET_NS: "target_NS"   
