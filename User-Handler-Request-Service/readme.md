@@ -99,6 +99,3 @@ This is a Flask-based web application designed to interact with a Kubernetes clu
 
 - Replace `your-username` with your actual GitHub username or appropriate repository URL.
 - Adjust the installation steps, paths, and configurations based on your actual setup.
-- The `LICENSE` file should be included if you want to distribute your project with an open-source license like MIT.
-
-This `README.md` provides an overview of the application, instructions for setting it up, and other relevant information to help others understand and use your project.
